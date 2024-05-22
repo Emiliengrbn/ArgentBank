@@ -1,0 +1,33 @@
+.section-1 {
+    background-image: url("../../assets/bank-tree.jpeg");
+    // background-position: 0 -50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    background-position: 0% 33%;
+    position: relative;
+
+    div {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        // width: 300px;
+        margin: 2rem;
+        background: white;
+        padding: 2rem;
+        text-align: left;
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 300px;
+        }
+
+        .text {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            margin-top: 1.2rem;
+            width: 300px;
+        }
+    }
+}

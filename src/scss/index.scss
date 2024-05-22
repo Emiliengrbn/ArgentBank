@@ -1,0 +1,14 @@
+@import "./reset.scss";
+
+/***** PAGES *****/
+
+@import "./pages/home.scss";
+@import "./pages/signin.scss";
+@import "./pages/account.scss";
+
+/***** COMPONENTS *****/
+
+@import "./components/header.scss";
+@import "./components/feature.scss";
+@import "./components/transaction.scss";
+@import "./components/footer.scss";

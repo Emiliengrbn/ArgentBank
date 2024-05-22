@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+
+    .logo {
+        width: 200px;
+    }
+
+    .sign-in {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        .fa-circle-user {
+            height: 20px;
+
+        }
+
+        .sign-in-text {
+            margin-right: 0.5rem;
+            margin-left: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.account-title {
+    margin-bottom: 2rem;
+    text-align: center;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #fff;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+    }
+
+    .edit-name {
+        border-color: #00bc77;
+        background-color: #00bc77;
+        color: #fff;
+        font-weight: bold;
+        padding: 10px;
+    }
+}
