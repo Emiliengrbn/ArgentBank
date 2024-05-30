@@ -7,8 +7,10 @@ const fetchAuthToken = (email, password, navigate) => async (dispatch) => {
   try {
     const fetchAll = new FetchAll();
     const token = await fetchAll.postLogin(email, password);
-
+    
     if (token) {
+      const aze = await fetchAll.postProfile(token);
+      console.log(aze);
       dispatch(login(token));
       navigate("/profile");
     } else {
