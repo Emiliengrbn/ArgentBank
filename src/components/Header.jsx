@@ -11,6 +11,7 @@ function Header() {
     const dispatch = useDispatch()
   
     const token = useSelector((state) => state.Login.token)
+    const username = useSelector((state) => state.Profile.firstName)
   
     const handleDeleteStore = () => {
       dispatch(logout())
@@ -32,7 +33,7 @@ function Header() {
         <div className="logout-container">
           <div className="user-name">
             <FontAwesomeIcon icon={faCircleUser} />
-            {/* {username} */}
+            {username}
           </div>
           <Link to="/login" onClick={handleDeleteStore}>
             <div className="sign-in">

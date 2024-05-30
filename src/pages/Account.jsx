@@ -1,10 +1,18 @@
+import { useSelector } from "react-redux"
 import Transaction from "../components/Transaction"
 
 function Account() {
+    const firstName = useSelector((state) => state.Profile.firstName)
+    const lastName = useSelector((state) => state.Profile.lastName)
     return (
         <main className="bg-dark-blue">
             <div className="account-title">
-                <h1>Welcome back <br /> Tony Jarvis!</h1>
+                {/* <h1>Welcome back <br /> Tony Jarvis!</h1> */}
+                <h1>Welcome back</h1>
+                <div>
+                    <p>{firstName}</p>
+                    <p>{lastName}</p>
+                </div>
                 <button className="edit-name">Edit Name</button>
             </div>
             <div className="transactions-container">

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useRef, useState } from 'react'
 import { fetchAuthToken } from '../fetchAuthToken'
 
@@ -9,7 +9,6 @@ function SignIn() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-        const token = useSelector(state => state.Login.token);
     const [errors, setErrors] = useState({
         username: '',
         password: '',
@@ -60,10 +59,6 @@ function SignIn() {
             username: '',
             email: '',
         });
-        dispatch({
-            type: "Login/login",
-            payload: token,
-        })
       }
   }
 
