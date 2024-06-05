@@ -2,19 +2,19 @@ import { faCircleUser, faRightFromBracket } from "@fortawesome/free-solid-svg-ic
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { loginSlice } from "../redux/login";
+import { isAuthenticated } from "../redux/selector/isAuthenticated";
 
-const { logout } = loginSlice.actions;
 const logo = require("../assets/logo.png");
 
 function Header() {
     const dispatch = useDispatch()
   
-    const token = useSelector((state) => state.Login.token)
+    const isUserAuthenticated = useSelector(isAuthenticated)
     const username = useSelector((state) => state.Profile.firstName)
   
     const handleDeleteStore = () => {
-      dispatch(logout())
+      dispatch({type: "Login/logout"})
+      dispatch({type: "Profile/logout"})
     }
   
     return(
@@ -22,7 +22,7 @@ function Header() {
         <Link to="/">
           <img src={logo} alt="logo" className="logo"/>
         </Link>
-        {!token ?  
+        {!isUserAuthenticated ?  
         <Link to="/login">
           <div className="sign-in">
             <FontAwesomeIcon icon={faCircleUser} />
@@ -31,14 +31,14 @@ function Header() {
         </Link>
         : 
         <div className="logout-container">
-          <div className="user-name">
+          <Link to="/profile" className="user-name bold">
             <FontAwesomeIcon icon={faCircleUser} />
             {username}
-          </div>
+          </Link>
           <Link to="/login" onClick={handleDeleteStore}>
             <div className="sign-in">
             <FontAwesomeIcon icon={faRightFromBracket} />
-              <p className="bold sign-in-text">Log out</p>
+              <p className="bold sign-in-text">Sign Out</p>
             </div>
           </Link>
         </div>}

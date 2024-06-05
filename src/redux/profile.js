@@ -7,11 +7,13 @@ export const profileSlice = createSlice({
     lastName: null,
   },
   reducers: {
-    firstname: (state, action) => {
-      state.firstName = action.payload
+    setUserProfile: (state, action) => {
+      state.firstName = action.payload.firstName;
+      state.lastName = action.payload.lastName;
     },
-    lastname: (state, action) => {
-        state.lastName = action.payload
+    logout: (state) => {
+      state.firstName = null;
+      state.lastName = null;
     },
   },
 });

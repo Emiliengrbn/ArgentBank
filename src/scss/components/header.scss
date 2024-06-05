@@ -24,11 +24,15 @@ header {
 
         .sign-in-text {
             margin-right: 0.5rem;
-            margin-left: 0.5rem;
+            margin-left: 0.35rem;
         }
     }
 
     .logout-container {
         display: flex;
+
+        .user-name {
+            margin-right: 0.6rem;
+        }
     }
 }

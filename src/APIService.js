@@ -1,10 +1,5 @@
-export class FetchAll {
-  constructor(username, password) {
-    this.username = username;
-    this.password = password;
-  }
-
-  postLogin(email, password) {
+export class APIService {
+  login(email, password) {
     const data = {
       email,
       password,
@@ -30,7 +25,7 @@ export class FetchAll {
       });
   }
 
-  postProfile(token) {
+  getUserProfile(token) {
     return fetch("http://localhost:3001/api/v1/user/profile", {
       method: "POST",
       headers: {
@@ -52,7 +47,28 @@ export class FetchAll {
       });
   }
 
-  //   postProfile() {}
+  modifyUserProfile(token, firstname, lastname) {
+    const data = {
+      firstName: firstname,
+      lastName: lastname,
+    };
+    console.log(data);
+
+    return fetch("http://localhost:3001/api/v1/user/profile", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.body);
+        return data.body;
+      })
+      .catch((error) => console.error("Error:", error));
+  }
 
   //   putProfile() {}
 }

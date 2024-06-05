@@ -3,7 +3,7 @@ import { faCircleUser } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useRef, useState } from 'react'
-import { fetchAuthToken } from '../fetchAuthToken'
+import { authThunk } from '../redux/thunk/authThunk'
 
 function SignIn() {
     const dispatch = useDispatch()
@@ -29,15 +29,15 @@ function SignIn() {
         const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
 
         if(!usernameRef.current.value) {
-            newErrors.username = 'Le nom d\'utilisateur est requis'
+            newErrors.username = 'Username is required'
         } else if (!emailRegex.test(usernameRef.current.value)) {
-            newErrors.username = 'Le nom d\'utilisateur est invalide';
+            newErrors.username = 'Username is incorrect';
         }
 
         if(!passwordRef.current.value) {
-            newErrors.password = 'Le mot de passe est requis'
+            newErrors.password = 'Password is required'
         } else if(!passwordRegex.test(passwordRef.current.value)) {
-            newErrors.password = 'Le mot de passe est invalide'
+            newErrors.password = 'Password is incorrect'
         }
         return newErrors
     }
@@ -49,7 +49,7 @@ function SignIn() {
    */
   const handleSubmit = (e) => {
       e.preventDefault()
-      dispatch(fetchAuthToken(usernameRef.current.value, passwordRef.current.value, navigate));
+      dispatch(authThunk(usernameRef.current.value, passwordRef.current.value, navigate));
       const validationErrors = formVerification()
 
       if (Object.keys(validationErrors).length > 0) {
