@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"
 import SignIn from "./pages/SignIn";
 import Account from "./pages/Account"
-import Error from "./pages/Error"
 import Header from "./components/Header";
+import PrivateRoot from "./privateRoot";
 
 function App() {
   return (
@@ -13,8 +13,18 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<SignIn />}></Route>
-        <Route path="/profile" element={<Account />}></Route>
-        <Route path="*" element={<Error />}></Route>
+        {/* <Route path="/login"  element={
+              <PrivateRoot root="/profile">
+                <SignIn />
+              </PrivateRoot>
+            } ></Route> */}
+        <Route path="/profile" element={
+              <PrivateRoot root="/login">
+                <Account />
+              </PrivateRoot>
+            } ></Route>
+        {/* <Route path="/profile" element={<Account />}></Route> */}
+        <Route path="*" element={<Home />}></Route>
       </Routes>
       <footer>
         <p className="copyright">Copyright 2020 Argent Bank</p>

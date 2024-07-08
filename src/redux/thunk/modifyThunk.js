@@ -5,7 +5,6 @@ const modifyThunk = (token, firstname, lastname) => async (dispatch) => {
     const service = new APIService();
 
     const modify = await service.modifyUserProfile(token, firstname, lastname);
-    console.log(modify);
 
     dispatch({
       type: "Profile/setUserProfile",

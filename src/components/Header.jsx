@@ -35,7 +35,7 @@ function Header() {
             <FontAwesomeIcon icon={faCircleUser} />
             {username}
           </Link>
-          <Link to="/login" onClick={handleDeleteStore}>
+          <Link to="/" onClick={handleDeleteStore}>
             <div className="sign-in">
             <FontAwesomeIcon icon={faRightFromBracket} />
               <p className="bold sign-in-text">Sign Out</p>

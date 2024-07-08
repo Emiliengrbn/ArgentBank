@@ -21,7 +21,7 @@ function Account() {
             
             setEdit(false)
         } else {
-            alert("remplie les champs")
+            alert("Merci de remplir les champs")
         }
     }
 
