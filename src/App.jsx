@@ -13,17 +13,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<SignIn />}></Route>
-        {/* <Route path="/login"  element={
-              <PrivateRoot root="/profile">
-                <SignIn />
-              </PrivateRoot>
-            } ></Route> */}
         <Route path="/profile" element={
               <PrivateRoot root="/login">
                 <Account />
               </PrivateRoot>
             } ></Route>
-        {/* <Route path="/profile" element={<Account />}></Route> */}
         <Route path="*" element={<Home />}></Route>
       </Routes>
       <footer>

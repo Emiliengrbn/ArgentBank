@@ -1,6 +1,5 @@
 .section-1 {
     background-image: url("../../assets/bank-tree.jpeg");
-    // background-position: 0 -50px;
     background-size: cover;
     background-repeat: no-repeat;
     height: 400px;
@@ -11,7 +10,6 @@
         position: absolute;
         top: 50px;
         right: 50px;
-        // width: 300px;
         margin: 2rem;
         background: white;
         padding: 2rem;
@@ -28,6 +26,34 @@
             font-size: 1.2rem;
             margin-top: 1.2rem;
             width: 300px;
+        }
+    }
+}
+
+@media all and (max-width: 768px) {
+    .section-1  {
+        background-position: 0 -50px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 300px;
+
+        div {
+            position: relative;
+            top: 2rem;
+            right: auto;
+            width: 264px;
+            background: white;
+            padding: 2rem;
+            margin: 0 auto;
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .text {
+                font-size: 0.9rem;
+                width: 200px;
+            }
         }
     }
 }

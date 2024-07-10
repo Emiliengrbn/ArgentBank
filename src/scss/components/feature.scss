@@ -32,3 +32,9 @@
         }
     }
 }
+
+@media all and (max-width: 768px) {
+    .section-2 {
+        flex-direction: column;
+    }
+}

@@ -29,3 +29,13 @@
         color: #fff;
     }
 }
+
+@media all and (max-width: 768px) {
+    .transaction {
+        flex-direction: column;
+
+        .transaction-button, .transaction-infos {
+            width: 100%;
+        }
+    }
+}
